@@ -1,3 +1,5 @@
+cp /catalogue.service /etc/systemd/system/catalogue.service
+cp /mongo.repo //etc/yum.repos.d/mongo.repo
 dnf module disable nodejs -y
 dnf module enable nodejs:18 -y
 dnf install nodejs -y
@@ -9,4 +11,4 @@ unzip /tmp/catalogue.zip
 cd /app
 npm install
 systemctl daemon-reload
-mongo --host MONGODB-SERVER-IPADDRESS </app/schema/catalogue.js
+mongo --host mongodb.nkdevops29.online </app/schema/catalogue.js
